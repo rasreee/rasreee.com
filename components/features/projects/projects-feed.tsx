@@ -6,7 +6,7 @@ import { LazyProjectCard } from "./lazy-project-card";
 
 export type ProjectsFeedProps = {};
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 20;
 
 export const ProjectsFeed: React.FC<ProjectsFeedProps> = ({}) => {
   const [offset, setOffset] = useState(0);
