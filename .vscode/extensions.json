@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "mscolnick.export-typescript",
+    "stylelint.vscode-stylelint",
+    "syler.sass-indented"
+  ]
+}

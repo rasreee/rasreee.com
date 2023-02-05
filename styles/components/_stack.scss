@@ -1,0 +1,61 @@
+$unit: 0.25rem;
+
+@layer utilities {
+  .stack {
+    @apply flex items-center;
+    gap: calc($unit * 2);
+  }
+
+  .h-stack {
+    @apply stack flex-row;
+  }
+
+  .h-stack-0 {
+    @apply h-stack;
+    gap: calc($unit * 0);
+  }
+
+  .h-stack-1 {
+    @apply h-stack;
+    gap: calc($unit * 1);
+  }
+
+  .h-stack-3 {
+    @apply h-stack;
+    gap: calc($unit * 3);
+  }
+
+  .h-stack-5 {
+    @apply h-stack;
+    gap: calc($unit * 5);
+  }
+
+  .v-stack {
+    @apply stack flex-col;
+  }
+
+  .v-stack-0 {
+    @apply v-stack;
+    gap: calc($unit * 0);
+  }
+
+  .v-stack-1 {
+    @apply v-stack;
+    gap: calc($unit * 1);
+  }
+
+  .v-stack-3 {
+    @apply v-stack;
+    gap: calc($unit * 3);
+  }
+
+  .v-stack-4 {
+    @apply v-stack;
+    gap: calc($unit * 4);
+  }
+
+  .v-stack-5 {
+    @apply v-stack;
+    gap: calc($unit * 5);
+  }
+}

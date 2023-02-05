@@ -1,0 +1,28 @@
+{
+  "dir": "ltr",
+  "display": "standalone",
+  "lang": "English",
+  "name": "Lesley Chang",
+  "short_name": "rasreee.com",
+
+  "description": "Product Engineer",
+  "categories": ["education", "personalization"],
+
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+
+  "icons": [
+    {
+      "sizes": "192x192",
+      "src": "/favicon/android-chrome-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "256x256",
+      "src": "/favicon/android-chrome-256x256.png",
+      "type": "image/png"
+    }
+  ],
+
+  "start_url": "../../index.html"
+}

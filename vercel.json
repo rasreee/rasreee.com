@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "buildCommand": "pnpm next build --no-lint",
+  "outputDirectory": ".next",
+  "devCommand": "pnpm next dev",
+  "installCommand": "pnpm install --loglevel debug --fix-lockfile"
+}

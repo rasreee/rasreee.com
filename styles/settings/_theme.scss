@@ -1,0 +1,14 @@
+$font-sans-base: -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+$font-sans: "PretendardVariable", Pretendard, $font-sans-base;
+
+:root {
+  --color-primary: #3cf;
+  --color-secondary: #884d9f;
+  --color-bg: #111;
+  --color-muted: #333;
+  --color-text: #eaeaea;
+  --color-hint: #adadad;
+  --color-highlight: #37173b;
+  --color-accent: #a596ed;
+  --font-sans: #{$font-sans};
+}

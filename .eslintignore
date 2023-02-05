@@ -1,0 +1,11 @@
+.DS_Store
+.env*
+*.log*
+*.pem
+*.tsbuildinfo
+/.cache
+/.husky
+/.next
+/.vercel
+/node_modules
+pnpm-lock.yaml

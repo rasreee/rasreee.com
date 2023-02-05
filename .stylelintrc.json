@@ -1,0 +1,105 @@
+{
+  "ignorePatterns": ["node_modules", ".next", ".cache"],
+  "plugins": ["stylelint-order"],
+  "extends": [
+    "@giotramu/stylelint-config",
+    "@giotramu/stylelint-config/prettier"
+  ],
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "color-function-notation": "modern",
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": ["blockless-after-same-name-blockless", "first-nested"],
+        "ignore": ["after-comment"],
+        "ignoreAtRules": ["if", "else"]
+      }
+    ],
+    "at-rule-name-space-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "block-no-empty": true,
+    "block-closing-brace-newline-after": [
+      "always",
+      {
+        "ignoreAtRules": ["if", "else"]
+      }
+    ],
+    "block-opening-brace-newline-before": "always-single-line",
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignore": ["consecutive-duplicates"]
+      }
+    ],
+    "font-family-name-quotes": "always-unless-keyword",
+    "import-notation": "string",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "selector-max-compound-selectors": 4,
+    "selector-id-pattern": "^[a-z][a-zA-Z0-9]+$|^",
+    "max-empty-lines": 2,
+    "selector-no-qualifying-type": [
+      true,
+      {
+        "ignore": ["attribute"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.scss"],
+      "customSyntax": "postcss-scss",
+      "extends": [
+        "@giotramu/stylelint-config",
+        "@giotramu/stylelint-config/sass",
+        "@giotramu/stylelint-config/prettier"
+      ],
+      "rules": {
+        "annotation-no-unknown": [
+          true,
+          {
+            "ignoreAnnotations": ["default", "important"]
+          }
+        ],
+        "at-rule-no-unknown": [
+          true,
+          {
+            "ignoreAtRules": [
+              "function",
+              "return",
+              "each",
+              "error",
+              "extend",
+              "for",
+              "if",
+              "else",
+              "include",
+              "mixin",
+              "warn",
+              "content",
+              "forward",
+              "at-root",
+              "use",
+              "tailwind",
+              "apply"
+            ]
+          }
+        ],
+        "value-keyword-case": null,
+        "scss/at-rule-no-unknown": [
+          true,
+          {
+            "ignoreAtRules": ["tailwind", "apply"]
+          }
+        ],
+        "scss/partial-no-import": null
+      }
+    }
+  ]
+}

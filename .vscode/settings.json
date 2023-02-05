@@ -1,0 +1,37 @@
+{
+  "editor.detectIndentation": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.snippetSuggestions": "top",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "eslint.alwaysShowStatus": true,
+  "eslint.format.enable": true,
+  "eslint.run": "onType",
+  "eslint.debug": false,
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["postcss", "scss", "css"],
+  "stylelint.stylelintPath": "./node_modules/stylelint",
+  "stylelint.customSyntax": "./node_modules/postcss-scss/lib/scss-syntax.js",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "task.allowAutomaticTasks": "on",
+  // https://stackoverflow.com/questions/55201424/how-to-get-vscode-to-show-typescript-errors-for-files-not-open-in-the-editor/60116499#60116499
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+  "[typescript][typescriptreact][javascript][javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json][jsonc][markdown][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css][scss][postcss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "prettier.prettierPath": "node_modules/prettier"
+}

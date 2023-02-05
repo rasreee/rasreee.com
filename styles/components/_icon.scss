@@ -1,0 +1,15 @@
+@layer utilities {
+  .icon {
+    --icon-size: 1.25rem;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: currentColor;
+  }
+  
+  .icon-sm {
+    --icon-size: 1rem;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    color: currentColor;
+  }
+}
