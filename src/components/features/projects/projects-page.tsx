@@ -15,5 +15,3 @@ export const ProjectsPage: NextPage = () => {
     </Page>
   );
 };
-
-export default ProjectsPage;

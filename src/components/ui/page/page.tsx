@@ -1,6 +1,6 @@
 import type { MetaProps } from "components/ui/page/meta";
 import Meta from "components/ui/page/meta";
-import dynamic from "next/dynamic";
+import { dynamicNoSSR } from "lib/dynamic";
 import type { ReactNode } from "react";
 import Header from "./header";
 
@@ -20,4 +20,6 @@ export function Page({ children, ...metaProps }: PageProps): JSX.Element {
   );
 }
 
-Page.Heading = dynamic(() => import("./page-heading"));
+Page.Heading = dynamicNoSSR(() => import("./page-heading"), {
+  loading: () => <div>LOADING</div>,
+});

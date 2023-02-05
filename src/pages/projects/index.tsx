@@ -1,3 +1,3 @@
-import { ProjectsPage } from "components/features/projects";
+import { ProjectsPage } from "components/features/projects/projects-page";
 
 export default ProjectsPage;
