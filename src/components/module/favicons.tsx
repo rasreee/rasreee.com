@@ -1,4 +1,3 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
 import { Fragment } from "react";
 
 const Favicons: React.FC = () => {
@@ -32,20 +31,4 @@ const Favicons: React.FC = () => {
   );
 };
 
-class MyDocument extends Document {
-  render() {
-    return (
-      <Html lang="en">
-        <Head>
-          <Favicons />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
-
-export default MyDocument;
+export default Favicons;

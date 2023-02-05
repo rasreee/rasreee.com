@@ -1,12 +1,12 @@
+import { useCurrentRoute } from "lib/hooks/use-current-route";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 /**
  * NOTE Must export in order for tailwind to process it as content and
  * for hot reload to work properly when editing the classes
  */
 export function PageHeading(props: { title: string; description?: string }) {
-  const currentRoute = useRouter().asPath;
+  const currentRoute = useCurrentRoute();
 
   return (
     <section className="py-8 desktop:py-16">

@@ -1,6 +1,6 @@
-import { useRouter } from "next/router";
+import { useCurrentRoute } from "./use-current-route";
 
-export function useIsActive(href: string): boolean {
-  const currentRoute = useRouter().asPath;
-  return currentRoute === href;
+export function useIsActive(route: string): boolean {
+  const currentRoute = useCurrentRoute();
+  return currentRoute === route;
 }

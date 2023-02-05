@@ -3,9 +3,9 @@ import classes from "lib/classes";
 import { useIsActive } from "lib/hooks/use-is-active";
 import Link from "next/link";
 
-export type NavItemProps = IRoute;
+type NavItemProps = IRoute;
 
-export const NavItem: React.FC<NavItemProps> = ({ title, ...props }) => {
+const NavItem: React.FC<NavItemProps> = ({ title, ...props }) => {
   const isActive = useIsActive(props.href);
 
   return (

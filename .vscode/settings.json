@@ -20,7 +20,7 @@
   "stylelint.validate": ["postcss", "scss", "css"],
   "stylelint.stylelintPath": "./node_modules/stylelint",
   "stylelint.customSyntax": "./node_modules/postcss-scss/lib/scss-syntax.js",
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "node_modules/.pnpm/typescript@4.9.5/node_modules/typescript/lib",
   "task.allowAutomaticTasks": "on",
   // https://stackoverflow.com/questions/55201424/how-to-get-vscode-to-show-typescript-errors-for-files-not-open-in-the-editor/60116499#60116499
   "typescript.tsserver.experimental.enableProjectDiagnostics": true,
@@ -33,5 +33,6 @@
   "[css][scss][postcss]": {
     "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
-  "prettier.prettierPath": "node_modules/prettier"
+  "prettier.prettierPath": "node_modules/prettier",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

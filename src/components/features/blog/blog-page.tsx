@@ -1,16 +1,16 @@
-import { Page } from "components/ui/page";
+import PageHeading from "components/ui/page-heading";
 import type { NextPage } from "next";
 
 export const BlogPage: NextPage = () => {
   return (
-    <Page title="Blog">
-      <Page.Heading
+    <>
+      <PageHeading
         description="Read articles I've written on web development, career, personal growth, and more."
         title="Blog"
       />
       <div>
         <p>Coming soon...</p>
       </div>
-    </Page>
+    </>
   );
 };

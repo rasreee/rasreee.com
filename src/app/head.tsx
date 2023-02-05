@@ -1,7 +1,7 @@
 import { site } from "config/site.config";
 import Head from "next/head";
 
-export const AppHead: React.FC = () => {
+const AppHead: React.FC = () => {
   return (
     <Head>
       <title>{site.title}</title>

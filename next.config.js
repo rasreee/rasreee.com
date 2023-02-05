@@ -1,4 +1,5 @@
 // @ts-check
+const path = require("path");
 const { isTrueEnv } = require("./tools/env");
 const { fromRoot } = require("./tools/path");
 
@@ -9,6 +10,10 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import('next').NextConfig} */
 const config = {
+  sassOptions: { includePaths: [path.join(__dirname, "src/app/styles")] },
+  experimental: {
+    appDir: true,
+  },
   transpilePackages: [
     "@react-hookz/web" /* allow importing like `@react-hookz/web/esm/*` */,
   ],

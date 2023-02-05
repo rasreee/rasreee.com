@@ -1,6 +1,6 @@
 import { createLogger } from "@rasri/log";
 import type { ReactElement } from "react";
-import React, { useEffect } from "react";
+import React from "react";
 import type { Fetcher, Key, SWRConfiguration } from "swr";
 import useSWR from "swr";
 import type {
@@ -54,9 +54,9 @@ export function DataList<
     config
   );
 
-  useEffect(() => {
-    logger.debug({ data, error, isLoading });
-  }, [data, error, isLoading]);
+  // useEffect(() => {
+  //   logger.debug({ data, error, isLoading });
+  // }, [data, error, isLoading]);
 
   if (isLoading || !data) {
     return fallback;

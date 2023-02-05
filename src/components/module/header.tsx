@@ -1,11 +1,10 @@
-import { useAppConfig } from "app/app-context";
-import { ResponsiveNav } from "components/ui/nav";
+"use client";
+import Logo from "components/module/logo";
+import { ResponsiveNav } from "components/module/nav";
+import { routes } from "config/routes.config";
 import Link from "next/link";
-import Logo from "./logo";
 
 const Header: React.FC = () => {
-  const { routes } = useAppConfig();
-
   return (
     <header className="flex min-h-[3rem] items-center justify-between aboveMobile:min-h-[4rem]">
       <Link href="/">

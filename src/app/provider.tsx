@@ -1,12 +1,13 @@
+"use client";
 import { Analytics } from "@vercel/analytics/react";
 import { getConfig } from "config/get-config";
 import fetcher from "lib/fetcher";
-import type { ReactNode } from "react";
+import type { PropsWithChildren } from "react";
 import type { SkeletonThemeProps } from "react-loading-skeleton";
 import { SkeletonTheme } from "react-loading-skeleton";
 import type { SWRConfiguration } from "swr";
 import { SWRConfig } from "swr";
-import { AppContext } from "./app-context";
+import { AppContext } from "./context";
 
 const swrConfig: SWRConfiguration = {
   fetcher,
@@ -22,11 +23,7 @@ const skeletonTheme: SkeletonThemeProps = {
   highlightColor: "#1b1b1b",
 };
 
-interface AppProviderProps {
-  children: ReactNode;
-}
-
-const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
+const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const value = { config: getConfig() };
 
   return (
