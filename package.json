@@ -7,7 +7,7 @@
     "build": "next build",
     "clean:build": "rimraf .next",
     "clean:cache": "rimraf .cache",
-    "clean:ts": "rimraf ./tsconfig*.tsbuildinfo",
+    "clean:ts": "rimraf ./*.tsbuildinfo",
     "clean": "pnpm g:run-p \"clean:*\" && pnpm run --recursive clean",
     "dev": "next dev",
     "fix": "pnpm g:run-s \"lint:*:fix\" format:write",

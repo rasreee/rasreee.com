@@ -1,31 +1,32 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "moduleResolution": "node",
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "tsBuildInfoFile": "tsconfig.tsbuildinfo",
     "allowJs": true,
     "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false,
-    "noEmit": true,
     "incremental": true,
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "removeComments": true,
-    "rootDir": ".",
-    "baseUrl": "."
+    "baseUrl": "./src",
+    "paths": {
+      "sanity.config": ["../sanity.config"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-  "exclude": ["node_modules", "./.*/"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules", ".cache"]
 }

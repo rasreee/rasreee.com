@@ -1,7 +1,7 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import { apiVersion, dataset, projectId } from "./sanity/env";
+import { apiVersion, dataset, projectId } from "./sanity/_lib/env";
 import schema from "./sanity/schema";
 
 const sanityConfig = defineConfig({

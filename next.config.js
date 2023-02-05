@@ -27,10 +27,7 @@ const config = {
   reactStrictMode: true,
   swcMinify: false /* TODO enable once the agressive dead code elimination bug that causes `ReferenceError: FieldPresenceWithOverlay is not defined` is fixed */,
   images: {
-    remotePatterns: [
-      { hostname: "cdn.sanity.io" },
-      { hostname: "source.unsplash.com" },
-    ],
+    remotePatterns: [{ hostname: "cdn.sanity.io" }],
   },
   typescript: {
     tsconfigPath: fromRoot("tsconfig.json"),
