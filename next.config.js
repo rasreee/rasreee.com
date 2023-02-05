@@ -13,7 +13,7 @@ const config = {
     "@react-hookz/web" /* allow importing like `@react-hookz/web/esm/*` */,
   ],
   reactStrictMode: true,
-  swcMinify: false /* TODO enable once the agressive dead code elimination bug that causes `ReferenceError: FieldPresenceWithOverlay is not defined` is fixed */,
+  swcMinify: true,
   images: {
     remotePatterns: [{ hostname: "cdn.sanity.io" }],
   },
