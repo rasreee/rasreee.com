@@ -11,7 +11,6 @@ module.exports = {
   ],
   [toFilePattern(["css", "scss"])]: (files) =>
     getStylelintFixCmd(__dirname, files),
-  [toFilePattern(["jsx", "tsx", "json", "md", "mdx", "yml", "yaml"])]: (
-    files
-  ) => getPrettierFixCmd(__dirname, files),
+  [toFilePattern(["json", "md", "mdx", "yml", "yaml"])]: (files) =>
+    getPrettierFixCmd(__dirname, files),
 };

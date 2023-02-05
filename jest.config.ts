@@ -1,9 +1,6 @@
 import type { Config } from "jest";
 import { getCachePath } from "./tools/cache";
-
-function fromRoot(dir: string) {
-  return `<rootDir>/${dir}`;
-}
+import { fromRoot } from "./tools/path";
 
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:

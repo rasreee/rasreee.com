@@ -1,18 +1,6 @@
 // @ts-check
-
-/**
- * @param {string} dir
- */
-function fromRoot(dir) {
-  return `./${dir}`;
-}
-
-/**
- * @param {any} value
- */
-function isTrueEnv(value) {
-  return ["true", "1", "yes"].includes(value);
-}
+const { isTrueEnv } = require("./tools/env");
+const { fromRoot } = require("./tools/path");
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: isTrueEnv(process.env.ANALYZE),
