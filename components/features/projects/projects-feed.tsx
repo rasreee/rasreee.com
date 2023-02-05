@@ -13,14 +13,12 @@ export const ProjectsFeed: React.FC<ProjectsFeedProps> = ({}) => {
 
   return (
     <div>
-      <PaginationBar limit={PAGE_SIZE} offset={offset} setOffset={setOffset} />
       <DataList
         fallback={<FeedSkeleton count={PAGE_SIZE} />}
         renderError={(error) => <div>{error?.message}</div>}
         renderItem={LazyProjectCard}
         swrKey={`/api/projects?offset=${offset}&limit=${PAGE_SIZE}`}
       />
-      <PaginationBar limit={PAGE_SIZE} offset={offset} setOffset={setOffset} />
     </div>
   );
 };
