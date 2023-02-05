@@ -3,6 +3,8 @@
 *.log*
 *.pem
 *.tsbuildinfo
+**/*.css
+**/*.scss
 /.cache
 /.husky
 /.next
