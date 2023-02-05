@@ -5,7 +5,7 @@ import type { ApiRequest, ApiResponse } from "lib/next-api";
 import { serializeError } from "lib/serialize-error";
 import { wait } from "lib/wait";
 
-const getProject = async (id: string): Promise<Project> => {
+async function getProject(id: string): Promise<Project> {
   await wait();
   const found = mockProjects.find((project) => project.id === id);
   if (found) {
@@ -13,7 +13,7 @@ const getProject = async (id: string): Promise<Project> => {
   } else {
     throw new Error(`No project found with id=${id}`);
   }
-};
+}
 
 export type GetProjectParams = { id: string };
 
