@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 /**
@@ -6,7 +5,7 @@ import { useRouter } from "next/router";
  * for hot reload to work properly when editing the classes
  */
 export function PageHeading(props: { title: string; description?: string }) {
-  const currentRoute = useRouter().asPath;
+  const router = useRouter();
 
   return (
     <section className="py-8 desktop:py-16">
@@ -16,10 +15,10 @@ export function PageHeading(props: { title: string; description?: string }) {
           {props.description}
         </p>
       )}
-      {currentRoute !== "/" && (
-        <Link
+      {router.asPath !== "/" && (
+        <button
           className="my-2 inline-flex items-center py-1 text-hint hover:text-primary-400 aboveMobile:my-3"
-          href="/"
+          onClick={() => router.back()}
         >
           <svg
             className="h-4 w-4 aboveMobile:h-5 aboveMobile:w-5"
@@ -37,7 +36,7 @@ export function PageHeading(props: { title: string; description?: string }) {
           <span className="font-mono text-xs font-medium uppercase aboveMobile:text-sm aboveMobile:hover:underline aboveMobile:hover:underline-offset-2">
             Back
           </span>
-        </Link>
+        </button>
       )}
     </section>
   );
