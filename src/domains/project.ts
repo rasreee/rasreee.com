@@ -13,7 +13,7 @@ export type Project = {
   language?: GithubLanguage;
 };
 
-export const mockProjects: Project[] = [
+export const projects: Project[] = [
   {
     id: "ijan",
     title: "iJan Payroll Portal",

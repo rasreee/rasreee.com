@@ -13,7 +13,7 @@ const config = {
     "@react-hookz/web" /* allow importing like `@react-hookz/web/esm/*` */,
   ],
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
   images: {
     remotePatterns: [{ hostname: "cdn.sanity.io" }],
   },

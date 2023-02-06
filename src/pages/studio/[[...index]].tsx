@@ -15,7 +15,6 @@ export default function StudioPage() {
       <Head>
         <NextStudioHead favicons={false} />
       </Head>
-
       <NextStudio config={config}>
         <StudioProvider config={config}>
           <GlobalStyle />

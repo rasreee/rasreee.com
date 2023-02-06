@@ -1,6 +1,6 @@
 import { createLogger } from "@rasri/log";
 import type { Project } from "domains/project";
-import { mockProjects } from "domains/project";
+import { projects } from "domains/project";
 import type { ApiRequest, ApiResponse } from "lib/next-api";
 import type { Pagination } from "lib/pagination";
 import { getPagination } from "lib/pagination";
@@ -12,14 +12,14 @@ const getProjects = ({
   limit,
   offset,
 }: Required<Pagination>): Promise<Project[]> => {
-  return Promise.all(mockProjects.slice(offset, offset + limit));
+  return Promise.all(projects.slice(offset, offset + limit));
 };
 
 const getFeaturedProjects = async ({
   limit,
   offset,
 }: Required<Pagination>): Promise<Project[]> => {
-  const featuredProjects = mockProjects
+  const featuredProjects = projects
     .filter((project) => project.featured)
     .slice(offset, offset + limit);
   return await Promise.resolve(featuredProjects);
