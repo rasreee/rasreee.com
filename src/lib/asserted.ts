@@ -1,10 +1,13 @@
+import { isFalsy } from "./falsy";
+import { isFunction } from "./function";
 import type { MessageArgument } from "./invariant";
-import invariant from "./invariant";
 
 export default function asserted<T>(
-  value: T | undefined,
+  value: Maybe<T>,
   message?: MessageArgument
 ): T {
-  invariant(value, message);
+  if (isFalsy(value)) {
+    throw new Error(isFunction(message) ? message() : message);
+  }
   return value;
 }

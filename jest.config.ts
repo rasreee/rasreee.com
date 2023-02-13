@@ -11,7 +11,7 @@ const jestConfig: Config = {
   passWithNoTests: true,
   cache: true,
   cacheDirectory: getCachePath("jest"),
-  collectCoverageFrom: ["src/**/*.{js,jsx,ts,tsx}"],
+  collectCoverageFrom: ["**/*.{js,jsx,ts,tsx}"],
   moduleFileExtensions: ["cjs", "mjs", "js", "jsx", "ts", "jsx", "json"],
   modulePathIgnorePatterns: [
     fromRoot(".cache"),
@@ -21,7 +21,7 @@ const jestConfig: Config = {
     fromRoot("tools"),
   ],
   testEnvironment: "jsdom",
-  testMatch: [fromRoot("src/**/?(*.)spec.+(js|jsx|ts|tsx)")],
+  testMatch: [fromRoot("**/?(*.)spec.+(js|jsx|ts|tsx)")],
   transform: {
     "^.+\\.(ts|tsx|js|jsx)?$": [
       "ts-jest",

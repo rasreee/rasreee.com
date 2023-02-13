@@ -3,7 +3,7 @@ import { mockProjects } from "domains/project";
 import invariant from "lib/invariant";
 import type { ApiRequest, ApiResponse } from "lib/next-api";
 import { serializeError } from "lib/serialize-error";
-import { wait } from "lib/wait";
+import wait from "lib/wait";
 
 async function getProject(id: string): Promise<Project> {
   await wait();

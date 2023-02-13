@@ -1,9 +1,9 @@
-const DEFAULT_MS = 1000;
+const DEFAULT_MS = 1500;
 
-export async function wait(ms: number = DEFAULT_MS): Promise<null> {
-  return await new Promise((res) =>
+export default async function wait(ms: number = DEFAULT_MS): Promise<null> {
+  return await new Promise((resolve) =>
     setTimeout(() => {
-      res(null);
+      resolve(null);
     }, ms)
   );
 }

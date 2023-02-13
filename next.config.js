@@ -14,9 +14,6 @@ const config = {
   ],
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    remotePatterns: [{ hostname: "cdn.sanity.io" }],
-  },
   typescript: {
     tsconfigPath: fromRoot("tsconfig.json"),
     ignoreBuildErrors: isTrueEnv(process.env.SKIP_TYPECHECK),

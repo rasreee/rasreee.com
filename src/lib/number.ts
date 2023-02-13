@@ -11,5 +11,9 @@ export function isInteger(value: unknown): value is number {
 }
 
 export function toInteger(value: any, fallback = 0): number {
+  if (typeof value === "string") {
+    return parseInt(value);
+  }
+
   return !isInteger(value) || Number.isNaN(value) ? fallback : value;
 }
