@@ -108,8 +108,6 @@
   "packageManager": "pnpm@7.26.1",
   "engines": {
     "node": ">=16",
-    "npm": "please-use-pnpm",
-    "pnpm": ">=7",
-    "yarn": "please-use-pnpm"
+    "pnpm": ">=7"
   }
 }
