@@ -1,15 +1,23 @@
-import type { AnchorHTMLAttributes, FC, PropsWithChildren } from "react";
+import type { AnchorHTMLAttributes, FC } from "react";
 
-type ExternalLinkProps = PropsWithChildren<AnchorHTMLAttributes<HTMLAnchorElement>>;
+import { cn } from "@/lib/cn";
 
-export const ExternalLink: FC<ExternalLinkProps> = ({ href, children, ...props }) => {
+type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export const ExternalLink: FC<ExternalLinkProps> = ({
+  href,
+  className,
+  children,
+  ...props
+}) => {
   return (
     <a
       rel="noopener noreferrer"
       target="_blank"
-      className="transition-colors hover:text-primary text-text/70"
+      className={cn("transition-colors hover:text-primary text-text/70", className)}
       href={href}
-      {...props}>
+      {...props}
+    >
       {children}
     </a>
   );

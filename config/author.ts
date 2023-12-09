@@ -4,4 +4,5 @@ export const author = {
 
   github: "https://github.com/rasreee",
   linkedin: "https://www.linkedin.com/in/lesleyhchang",
+  twitch: "https://www.twitch.tv/rasreee",
 };

@@ -16,7 +16,8 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
         style={{
           marginTop: calc(`-1 * ${headerHeight}`),
           paddingTop: headerHeight,
-        }}>
+        }}
+      >
         {children}
       </div>
     </main>

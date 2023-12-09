@@ -30,7 +30,8 @@ const LogoSvg: FC<SVGProps<SVGSVGElement> & SizeProps<number>> = ({ size, ...pro
       viewBox="0 0 111 111"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}>
+      {...props}
+    >
       <g clipPath="url(#clip0_608_203)">
         <g clipPath="url(#clip1_608_203)">
           <path

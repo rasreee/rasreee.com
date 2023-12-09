@@ -1,11 +1,19 @@
 import type { FC } from "react";
 
+import { EmailIcon } from "@/components/email-icon";
 import { ExternalLink } from "@/components/external-link";
+import GitHubIcon from "@/components/social/icons/github-icon";
+import LinkedInIcon from "@/components/social/icons/linkedin-icon";
 import { author } from "@/config/author";
 
-import { EmailIcon, GitHubIcon, LinkedInIcon } from "./social-icons";
+import TwitchIcon from "./icons/twitch-icon";
 
 const socialLinks = [
+  {
+    name: "email",
+    href: `mailto:${author.email}`,
+    icon: EmailIcon,
+  },
   {
     name: "github",
     href: author.github,
@@ -17,9 +25,9 @@ const socialLinks = [
     icon: LinkedInIcon,
   },
   {
-    name: "email",
-    href: `mailto:${author.email}`,
-    icon: EmailIcon,
+    name: "twitch",
+    href: author.twitch,
+    icon: TwitchIcon,
   },
 ];
 

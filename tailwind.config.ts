@@ -48,6 +48,7 @@ const config: Config = {
         foreground: color("foreground"),
         secondary: color("secondary"),
         text: color("text"),
+        hint: color("hint"),
         primary: colorWithFg("primary"),
         destructive: colorWithFg("destructive"),
         muted: colorWithFg("muted"),

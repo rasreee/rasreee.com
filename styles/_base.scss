@@ -3,18 +3,19 @@
     @apply border-border;
   }
 
-  html {
+  html,
+  body {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-background text-text font-sans;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    html {
+    html,
+    body {
       scroll-behavior: auto;
     }
-  }
-
-  body {
-    @apply bg-background text-text font-sans;
   }
 }

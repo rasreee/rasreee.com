@@ -1,14 +1,15 @@
 :root {
-  --night: 0 0% 7%;
-  --baby-powder: 96 71% 99%;
+  --darkest: 0 0% 7%;
+  --lightest: 96 71% 99%;
   --mulberry: 321, 42%, 54%;
   --sky: 195 100% 60%;
 }
 
 :root {
-  --background: var(--night);
-  --foreground: var(--baby-powder);
+  --background: var(--darkest);
+  --foreground: var(--lightest);
   --text: var(--foreground);
+  --hint: 96 71% 90%;
 
   --card: 20 14.3% 4.1%;
   --card-foreground: 60 9.1% 97.8%;
