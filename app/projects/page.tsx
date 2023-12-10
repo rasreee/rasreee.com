@@ -7,7 +7,7 @@ export default function Projects() {
       <PageSection>
         <PageHeader
           title="Projects"
-          description="Showcase of the projects I've worked so far."
+          description="Showcase of my personal projects and professional works so far."
         />
       </PageSection>
     </Layout>
