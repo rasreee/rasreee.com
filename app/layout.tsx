@@ -2,10 +2,11 @@ import "@/styles/main.scss";
 
 import clsx from "clsx";
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 
 import { fonts } from "@/config/fonts";
 import { site } from "@/config/site";
+
+import { Analytics } from "./analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -42,11 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Script
-        async
-        src="https://umami-rasreee.vercel.app/script.js"
-        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
-      />
+      <Analytics />
       <body className={clsx(fonts.sans.variable, fonts.mono.variable)}>
         {children}
       </body>
