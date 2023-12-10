@@ -1,6 +1,5 @@
 import "@/styles/main.scss";
 
-import { Analytics } from "@vercel/analytics/react";
 import clsx from "clsx";
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
@@ -43,7 +42,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Analytics />
       <Script
         async
         src="https://umami-rasreee.vercel.app/script.js"
