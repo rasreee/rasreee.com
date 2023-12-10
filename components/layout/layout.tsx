@@ -12,7 +12,10 @@ export const Layout: FC<PropsWithChildren> = ({ children }) => {
     <main className="inset-0 min-h-screen">
       <Header />
       <div
-        className={clsx("layout", "flex flex-1 flex-col px-6 pb-12 tablet:px-12")}
+        className={clsx(
+          "layout",
+          "flex flex-1 flex-col px-6 pb-12 tablet:px-12"
+        )}
         style={{
           marginTop: calc(`-1 * ${headerHeight}`),
           paddingTop: headerHeight,

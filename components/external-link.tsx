@@ -14,7 +14,10 @@ export const ExternalLink: FC<ExternalLinkProps> = ({
     <a
       rel="noopener noreferrer"
       target="_blank"
-      className={cn("transition-colors hover:text-primary text-text/70", className)}
+      className={cn(
+        "transition-colors hover:text-primary text-text/70",
+        className
+      )}
       href={href}
       {...props}
     >

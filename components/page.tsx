@@ -23,5 +23,7 @@ export const PageHeader: FC<PageHeaderProps> = ({ title, description }) => {
 type PageSectionProps = PropsWithChildren<{ className?: string }>;
 
 export const PageSection: FC<PageSectionProps> = ({ children, className }) => {
-  return <section className={cn("mt-8 md:mt-16", className)}>{children}</section>;
+  return (
+    <section className={cn("mt-8 md:mt-16", className)}>{children}</section>
+  );
 };

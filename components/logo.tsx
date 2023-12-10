@@ -22,7 +22,10 @@ export const Logo: FC<LogoProps> = ({ size = "md" }) => {
   return <LogoSvg size={sizePx} />;
 };
 
-const LogoSvg: FC<SVGProps<SVGSVGElement> & SizeProps<number>> = ({ size, ...props }) => {
+const LogoSvg: FC<SVGProps<SVGSVGElement> & SizeProps<number>> = ({
+  size,
+  ...props
+}) => {
   return (
     <svg
       width={`${size}`}
@@ -88,7 +91,12 @@ const LogoSvg: FC<SVGProps<SVGSVGElement> & SizeProps<number>> = ({ size, ...pro
       </g>
       <defs>
         <clipPath id="clip0_608_203">
-          <rect width="111" height="80" fill="white" transform="translate(0.5 15)" />
+          <rect
+            width="111"
+            height="80"
+            fill="white"
+            transform="translate(0.5 15)"
+          />
         </clipPath>
         <clipPath id="clip1_608_203">
           <rect

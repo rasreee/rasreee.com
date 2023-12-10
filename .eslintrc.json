@@ -1,5 +1,11 @@
 {
-  "ignorePatterns": ["**/.next", "**/.yarn", "**/dist", "**/node_modules", "**/public"],
+  "ignorePatterns": [
+    "**/.next",
+    "**/.yarn",
+    "**/dist",
+    "**/node_modules",
+    "**/public"
+  ],
   "env": {
     "es6": true,
     "node": true,
