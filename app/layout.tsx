@@ -30,10 +30,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  width: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <Analytics />
@@ -42,7 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         src="https://umami-rasreee.vercel.app/script.js"
         data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ""}
       />
-      <body className={clsx(fonts.sans.variable, fonts.mono.variable)}>{children}</body>
+      <body className={clsx(fonts.sans.variable, fonts.mono.variable)}>
+        {children}
+      </body>
     </html>
   );
 }

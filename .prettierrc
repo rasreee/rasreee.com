@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/prettierrc",
   "arrowParens": "always",
   "bracketSpacing": true,
-  "printWidth": 90,
+  "printWidth": 80,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "semi": true,
