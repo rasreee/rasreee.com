@@ -1,0 +1,10 @@
+.icon {
+  color: var(--foreground);
+  height: 1.25rem;
+  width: 1.25rem;
+
+  @media (min-width: 640px) {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

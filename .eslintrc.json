@@ -36,7 +36,8 @@
     "airbnb-base",
     "airbnb",
     "airbnb-typescript",
-    "plugin:@next/next/core-web-vitals"
+    "plugin:@next/next/core-web-vitals",
+    "prettier"
   ],
   "plugins": [
     "@typescript-eslint",
@@ -109,7 +110,7 @@
         "count": 1
       }
     ],
-    "import/no-duplicates": "error",
+    "import/no-duplicates": ["error", { "considerQueryString": true }],
     "import/no-relative-packages": "off",
 
     "simple-import-sort/imports": [
@@ -190,6 +191,7 @@
         "ecmaVersion": "latest"
       },
       "rules": {
+        "global-require": "off",
         "@typescript-eslint/ban-ts-comment": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-var-requires": "off",
@@ -217,8 +219,7 @@
       "extends": [
         "plugin:react/recommended",
         "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended",
-        "prettier"
+        "plugin:jsx-a11y/recommended"
       ],
       "rules": {
         "react/no-unknown-property": ["error", { "ignore": ["css"] }],
@@ -249,8 +250,7 @@
         "plugin:jest/recommended",
         "plugin:jest-formatting/recommended",
         "plugin:testing-library/react",
-        "plugin:jest-dom/recommended",
-        "prettier"
+        "plugin:jest-dom/recommended"
       ],
       "rules": {
         // Relax rules that are known to be slow and less useful in a test context

@@ -1,0 +1,21 @@
+@keyframes wobble {
+	25% {
+		transform: rotate(8deg);
+	}
+	50% {
+		transform: rotate(-8deg);
+	}
+	75% {
+		transform: rotate(8deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+.animate-wobble {
+	&:focus,
+	&:hover {
+		animation: wobble 1s 1;
+	}
+}
