@@ -32,7 +32,7 @@ export const Header: FC = () => {
       )}
     >
       <Link href="/" className="animate-wobble">
-        <Logo />
+        <Logo size="xs" />
       </Link>
       <nav>
         <ul className="flex items-center space-x-3 text-sm md:space-x-5 md:text-base">
