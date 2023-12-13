@@ -7,8 +7,8 @@ import * as React from "react";
 import { environment } from "@/config/environment";
 
 if (typeof window !== "undefined") {
-  posthog.init(environment.posthogKey, {
-    api_host: environment.posthogHost,
+  posthog.init(environment.posthog.key, {
+    api_host: environment.posthog.host,
   });
   if (
     window.location.hostname === "localhost" ||

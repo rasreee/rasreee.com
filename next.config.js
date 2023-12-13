@@ -1,11 +1,11 @@
 console.log(
-  `\n\n\n\n====================== ${process.env.NODE_ENV.toUpperCase()} ======================\n\n\n\n`
+  `\n\n====================== ${process.env.NODE_ENV.toUpperCase()} ======================\n\n`
 );
 
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' app.posthog.com;
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   connect-src *;
@@ -52,6 +52,7 @@ const nextConfig = {
   eslint: {
     dirs: ["src"],
   },
+  productionBrowserSourceMaps: true,
   async headers() {
     return [
       {
