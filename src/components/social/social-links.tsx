@@ -7,8 +7,8 @@ import { ExternalLink } from "@/components/external-link";
 import GitHubIcon from "@/components/social/icons/github-icon";
 import LinkedInIcon from "@/components/social/icons/linkedin-icon";
 import { author } from "@/config/author";
-import { trackEvent } from "@/lib/analytics";
 
+import { useAnalytics } from "../analytics";
 import TwitchIcon from "./icons/twitch-icon";
 
 const socialLinks = [
@@ -35,6 +35,8 @@ const socialLinks = [
 ];
 
 export const SocialLinks: FC = () => {
+  const analytics = useAnalytics();
+
   return (
     <ul className="flex items-baseline gap-5">
       {socialLinks.map(({ name, href, icon: Icon }) => (
@@ -43,7 +45,7 @@ export const SocialLinks: FC = () => {
             href={href}
             aria-label={`${name}-link`}
             onClick={() => {
-              trackEvent(`Social Link: ${name}`, { type: "link" });
+              analytics.capture("SocialLink clicked");
             }}
           >
             <Icon />

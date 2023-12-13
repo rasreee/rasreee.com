@@ -3,14 +3,16 @@
 import { DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
+import { useAnalytics } from "@/components/analytics";
 import { Layout } from "@/components/layout";
 import { PageHeader, PageSection } from "@/components/page";
 import { SocialLinks } from "@/components/social/social-links";
 import { Button } from "@/components/ui/button";
 import { author } from "@/config/author";
-import { trackEvent } from "@/lib/analytics";
 
 export default function Page() {
+  const analytics = useAnalytics();
+
   return (
     <Layout>
       <PageSection>
@@ -33,7 +35,7 @@ export default function Page() {
             target="_blank"
             download={`${author.name.replace(" ", "_")}_resume`}
             onClick={() => {
-              trackEvent("Social Link: Resume", { type: "link" });
+              analytics.capture("Resume downloaded");
             }}
           >
             <DownloadIcon className="mr-2" />

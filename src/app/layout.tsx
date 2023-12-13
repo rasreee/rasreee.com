@@ -2,13 +2,10 @@ import "@/styles/main.scss";
 
 import clsx from "clsx";
 import type { Metadata, Viewport } from "next";
-import { Umami } from "pliny/analytics/Umami";
-import type { FC } from "react";
 
+import { AnalyticsProvider } from "@/components/analytics";
 import { fonts } from "@/config/fonts";
 import { site } from "@/config/site";
-import { umamiConfig } from "@/config/umami";
-import { isProduction } from "@/lib/node-env";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -38,16 +35,6 @@ export const viewport: Viewport = {
   userScalable: false,
 };
 
-const Analytics: FC = () => {
-  if (!isProduction() || !umamiConfig.umamiWebsiteId) {
-    return null;
-  }
-
-  return (
-    <Umami src={umamiConfig.src} umamiWebsiteId={umamiConfig.umamiWebsiteId} />
-  );
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -55,10 +42,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Analytics />
-      <body className={clsx(fonts.sans.variable, fonts.mono.variable)}>
-        {children}
-      </body>
+      <AnalyticsProvider>
+        <body className={clsx(fonts.sans.variable, fonts.mono.variable)}>
+          {children}
+        </body>
+      </AnalyticsProvider>
     </html>
   );
 }

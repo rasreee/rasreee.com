@@ -1,7 +1,11 @@
+console.log(
+  `\n\n\n\n====================== ${process.env.NODE_ENV.toUpperCase()} ======================\n\n\n\n`
+);
+
 // You might need to insert additional domains in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' analytics.umami.is;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
   style-src 'self' 'unsafe-inline';
   img-src * blob: data:;
   connect-src *;
