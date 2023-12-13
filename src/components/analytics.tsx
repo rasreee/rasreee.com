@@ -4,11 +4,23 @@ import posthog from "posthog-js";
 import { PostHogProvider, usePostHog } from "posthog-js/react";
 import * as React from "react";
 
-import { environment } from "@/config/environment";
+if (
+  !process.env.NEXT_PUBLIC_POSTHOG_KEY ||
+  !process.env.NEXT_PUBLIC_POSTHOG_HOST
+) {
+  console.warn(
+    "NEXT_PUBLIC_POSTHOG_KEY or NEXT_PUBLIC_POSTHOG_HOST environment variable(s) are not undefined."
+  );
+}
+
+const posthogConfig = {
+  key: process.env.NEXT_PUBLIC_POSTHOG_KEY || "",
+  host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "",
+};
 
 if (typeof window !== "undefined") {
-  posthog.init(environment.posthog.key, {
-    api_host: environment.posthog.host,
+  posthog.init(posthogConfig.key, {
+    api_host: posthogConfig.host,
   });
   if (
     window.location.hostname === "localhost" ||
