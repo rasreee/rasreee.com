@@ -1,4 +1,7 @@
-# rasreee.com
+<div align="center">
+  <h1>rasreee.com</h1>
+  <p>💠 Personal website. Built with Next.js, SCSS, & Tailwind CSS.</p>
+</div>
 
 ![image](./public/images/demo.png)
 
