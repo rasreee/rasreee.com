@@ -1,13 +1,14 @@
 import Link from "next/link";
-import type { FC } from "react";
 
-import { useIsActive } from "~/hooks/use-is-active";
-import { cn } from "~/lib/cn";
-import type { NavigationLinkConfig } from "~/types/navigation.types";
+import type { NavigationLinkConfig } from "domains/navigation/types";
+
+import { useIsActive } from "hooks/use-is-active";
+
+import { cn } from "lib/cn";
 
 type NavLinkProps = NavigationLinkConfig & { className?: string };
 
-export const NavLink: FC<NavLinkProps> = ({ title, href, className }) => {
+export const NavLink: React.FC<NavLinkProps> = ({ title, href, className }) => {
   const isActive = useIsActive();
 
   return (

@@ -1,9 +1,12 @@
-import type { FC, SVGProps } from "react";
 import React from "react";
+import type { SVGProps } from "react";
 
-import { cn } from "~/lib/cn";
+import { cn } from "lib/cn";
 
-const LinkedInIcon: FC<SVGProps<SVGSVGElement>> = ({ className, ...props }) => (
+const LinkedInIcon: React.FC<SVGProps<SVGSVGElement>> = ({
+  className,
+  ...props
+}) => (
   <svg
     fill="none"
     role="img"

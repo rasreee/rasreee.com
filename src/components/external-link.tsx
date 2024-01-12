@@ -1,12 +1,12 @@
 "use client";
 
-import type { AnchorHTMLAttributes, FC } from "react";
+import type { AnchorHTMLAttributes } from "react";
 
-import { cn } from "~/lib/cn";
+import { cn } from "lib/cn";
 
 type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
-export const ExternalLink: FC<ExternalLinkProps> = ({
+export const ExternalLink: React.FC<ExternalLinkProps> = ({
   href,
   className,
   children,

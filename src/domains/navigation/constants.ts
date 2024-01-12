@@ -1,4 +1,4 @@
-import type { NavigationConfig } from "~/types/navigation.types";
+import type { NavigationConfig } from "domains/navigation/types";
 
 export const navigation: NavigationConfig = {
   links: [

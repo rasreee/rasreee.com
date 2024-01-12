@@ -1,8 +1,8 @@
 "use client";
 
+import * as React from "react";
 import posthog from "posthog-js";
 import { PostHogProvider, usePostHog } from "posthog-js/react";
-import * as React from "react";
 
 if (
   !process.env.NEXT_PUBLIC_POSTHOG_KEY ||

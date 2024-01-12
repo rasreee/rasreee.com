@@ -1,9 +1,11 @@
 export type SocialMediaType = "github" | "linkedin" | "twitch" | "twitter";
 
-export type SocialMedia = {
+export type SocialMediaConfig = {
   type: SocialMediaType;
   href: string;
   username: string;
 };
 
-export type Socials = Record<SocialMediaType, SocialMedia>;
+export type SocialMedias = {
+  [key in SocialMediaType]: SocialMediaConfig;
+};

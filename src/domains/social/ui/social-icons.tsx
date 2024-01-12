@@ -1,8 +1,6 @@
-import type { FC } from "react";
-
 const className = "icon";
 
-export const GitHubIcon: FC = () => {
+export const GitHubIcon: React.FC = () => {
   return (
     <svg
       className={className}
@@ -27,7 +25,7 @@ export const GitHubIcon: FC = () => {
   );
 };
 
-export const LinkedInIcon: FC = () => {
+export const LinkedInIcon: React.FC = () => {
   return (
     <svg
       className={className}

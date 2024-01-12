@@ -1,15 +1,14 @@
 "use client";
 
-import type { FC } from "react";
+import { useAnalytics } from "components/analytics";
+import { EmailIcon } from "components/email-icon";
+import { ExternalLink } from "components/external-link";
 
-import { EmailIcon } from "~/components/email-icon";
-import { ExternalLink } from "~/components/external-link";
-import GitHubIcon from "~/components/social/icons/github-icon";
-import LinkedInIcon from "~/components/social/icons/linkedin-icon";
-import { author } from "~/config/author";
+import { author } from "config/author";
 
-import { useAnalytics } from "../analytics";
-import TwitchIcon from "./icons/twitch-icon";
+import GitHubIcon from "domains/social/ui/icons/github-icon";
+import LinkedInIcon from "domains/social/ui/icons/linkedin-icon";
+import TwitchIcon from "domains/social/ui/icons/twitch-icon";
 
 const socialLinks = [
   {
@@ -34,7 +33,7 @@ const socialLinks = [
   },
 ];
 
-export const SocialLinks: FC = () => {
+export const SocialLinks: React.FC = () => {
   const analytics = useAnalytics();
 
   return (

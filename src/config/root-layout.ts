@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
-import { site } from "~/config/site.config";
+import { site } from "config/site";
 
 const rootMetadata: Metadata = {
   metadataBase: new URL(site.url),

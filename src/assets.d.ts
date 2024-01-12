@@ -3,9 +3,9 @@
 // Svg should be in FC<SVGProps<SVGSVGElement>> type
 // i.e. an SVG component
 declare module "*.svg" {
-  import type { FC, SVGProps } from "react";
+  import type { SVGProps } from "react";
 
-  const content: FC<SVGProps<SVGSVGElement>>;
+  const content: React.FC<SVGProps<SVGSVGElement>>;
   export default content;
 }
 

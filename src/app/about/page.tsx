@@ -1,14 +1,16 @@
 "use client";
 
-import { DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import { DownloadIcon } from "@radix-ui/react-icons";
 
-import { useAnalytics } from "~/components/analytics";
-import Layout from "~/components/layout";
-import { PageHeader, PageSection } from "~/components/page";
-import { SocialLinks } from "~/components/social/social-links";
-import { Button } from "~/components/ui/button";
-import { author } from "~/config/author";
+import { useAnalytics } from "components/analytics";
+import Layout from "components/layout";
+import { PageHeader, PageSection } from "components/page";
+import { Button } from "components/ui/button";
+
+import { author } from "config/author";
+
+import { SocialLinks } from "domains/social/ui/social-links";
 
 export default function Page() {
   const analytics = useAnalytics();

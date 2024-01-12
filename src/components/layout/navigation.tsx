@@ -1,18 +1,18 @@
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import type { FC } from "react";
 
-import { NavLink } from "~/components/nav-link";
+import { NavLink } from "components/nav-link";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/components/ui/dropdown-menu";
-import type { NavigationConfig } from "~/types/navigation.types";
+} from "components/ui/dropdown-menu";
+
+import type { NavigationConfig } from "domains/navigation/types";
 
 export type NavigationProps = NavigationConfig;
 
-export const Navigation: FC<NavigationProps> = (props) => {
+export const Navigation: React.FC<NavigationProps> = (props) => {
   return (
     <>
       <div className="hidden md:block">
@@ -25,7 +25,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
   );
 };
 
-export const DefaultNavigation: FC<NavigationProps> = ({ links }) => {
+export const DefaultNavigation: React.FC<NavigationProps> = ({ links }) => {
   return (
     <nav>
       <ul className="flex items-center space-x-3 text-sm md:space-x-5 md:text-base">
@@ -39,7 +39,7 @@ export const DefaultNavigation: FC<NavigationProps> = ({ links }) => {
   );
 };
 
-export const MobileNavigation: FC<NavigationProps> = ({ links }) => {
+export const MobileNavigation: React.FC<NavigationProps> = ({ links }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

@@ -1,8 +1,6 @@
-import type { FC } from "react";
+import { PageSection } from "components/page";
 
-import { PageSection } from "~/components/page";
-
-export const FeaturedProjects: FC = () => {
+export const FeaturedProjects: React.FC = () => {
   return (
     <PageSection>
       <div className="space-y-1.5">

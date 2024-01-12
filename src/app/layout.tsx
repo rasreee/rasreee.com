@@ -1,10 +1,11 @@
-import "~/styles/main.scss";
-
 import clsx from "clsx";
 
-import { AnalyticsProvider } from "~/components/analytics";
-import { fonts } from "~/config/fonts";
-import { rootLayout } from "~/config/root-layout.config";
+import { AnalyticsProvider } from "components/analytics";
+
+import { fonts } from "config/fonts";
+import { rootLayout } from "config/root-layout";
+
+import "styles/main.scss";
 
 export const metadata = rootLayout.metadata;
 

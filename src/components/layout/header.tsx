@@ -1,14 +1,15 @@
 "use client";
 
 import clsx from "clsx";
-import { type FC } from "react";
 
-import { Navigation } from "~/components/layout/navigation";
-import { LogoLink } from "~/components/logo";
-import { navigation } from "~/config/navigation.config";
-import { useIsTop } from "~/hooks/use-is-top";
+import { Navigation } from "components/layout/navigation";
+import { LogoLink } from "components/logo";
 
-export const Header: FC = () => {
+import { navigation } from "domains/navigation/constants";
+
+import { useIsTop } from "hooks/use-is-top";
+
+export const Header: React.FC = () => {
   const isTop = useIsTop();
 
   return (

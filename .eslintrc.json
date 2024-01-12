@@ -91,6 +91,7 @@
     ],
     "no-underscore-dangle": "warn",
     "no-continue": "warn",
+    "no-plusplus": "off",
     "no-restricted-imports": [
       "error",
       {
@@ -115,21 +116,33 @@
       "error",
       {
         "groups": [
+          // Node.js builtins.
+          [
+            "^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)"
+          ],
+          // Packages. `react` related packages come first.
+          // Also, put `react-icons` in sorting order not with `react`
+          ["^react(?!-.)$", "^\\w", "^@\\w"],
+          // From the `components` directory.
+          ["^components"],
+          // From the `config` directory.
+          ["^config"],
+          // From the `domains` directory.
+          ["^domains"],
+          // From the `hooks` directory.
+          ["^hooks"],
+          // From the `lib` directory.
+          ["^lib"],
+          // From the `styles` directory.
+          ["^styles"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.s?css$"],
           // Side effect imports.
-          ["^\\u0000"],
-          // Node.js builtins prefixed with `node:`.
-          ["^node:"],
-          // Packages.
-          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-          ["^@?\\w"],
-          // Absolute imports and other imports such as Vue-style `~/foo`.
-          // Anything not matched in another group.
-          ["^"],
-          // Internal modules
-          ["^~/\\w"],
-          // Relative imports.
-          // Anything that starts with a dot.
-          ["^\\."]
+          ["^\\u0000"]
         ]
       }
     ],

@@ -1,9 +1,8 @@
-import type { FC } from "react";
+import { PageHeader, PageSection } from "components/page";
 
-import { PageHeader, PageSection } from "~/components/page";
-import { SocialLinks } from "~/components/social/social-links";
+import { SocialLinks } from "domains/social/ui/social-links";
 
-export const Hero: FC = () => {
+export const Hero: React.FC = () => {
   return (
     <PageSection className="py-16 md:py-24">
       <span className="font-mono text-secondary">Hi, my name is</span>
