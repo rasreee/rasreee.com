@@ -1,5 +1,5 @@
-import { Layout } from "@/components/layout";
-import { PageHeader, PageSection } from "@/components/page";
+import Layout from "~/components/layout";
+import { PageHeader, PageSection } from "~/components/page";
 
 export default function Projects() {
   return (

@@ -2,11 +2,11 @@
 
 import type { FC } from "react";
 
-import { EmailIcon } from "@/components/email-icon";
-import { ExternalLink } from "@/components/external-link";
-import GitHubIcon from "@/components/social/icons/github-icon";
-import LinkedInIcon from "@/components/social/icons/linkedin-icon";
-import { author } from "@/config/author";
+import { EmailIcon } from "~/components/email-icon";
+import { ExternalLink } from "~/components/external-link";
+import GitHubIcon from "~/components/social/icons/github-icon";
+import LinkedInIcon from "~/components/social/icons/linkedin-icon";
+import { author } from "~/config/author";
 
 import { useAnalytics } from "../analytics";
 import TwitchIcon from "./icons/twitch-icon";

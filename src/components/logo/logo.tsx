@@ -1,8 +1,9 @@
 import { cva } from "class-variance-authority";
 import Image from "next/image";
+import Link from "next/link";
 import type { FC } from "react";
 
-import type { SizeProps } from "@/lib/ui/types";
+import type { SizeProps } from "~/lib/ui/types";
 
 import logoUrl from "./logo.svg?url";
 
@@ -22,4 +23,14 @@ type LogoProps = SizeProps<LogoSize>;
 
 export const Logo: FC<LogoProps> = ({ size = "sm" }) => {
   return <Image alt="logo" src={logoUrl} className={logoVariants({ size })} />;
+};
+
+type LogoLinkProps = LogoProps;
+
+export const LogoLink: FC<LogoLinkProps> = () => {
+  return (
+    <Link href="/" className="animate-wobble">
+      <Logo size="xs" />
+    </Link>
+  );
 };

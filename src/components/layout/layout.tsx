@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import type { FC, PropsWithChildren } from "react";
 
-import { calc, cssVar } from "@/lib/css";
+import { calc, cssVar } from "~/lib/css";
 
 import { Header } from "./header";
 

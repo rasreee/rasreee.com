@@ -1,4 +1,4 @@
-import { author } from "./author";
+import { author } from "~/config/author";
 
 export const site = {
   title: author.name,

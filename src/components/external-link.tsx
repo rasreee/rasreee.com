@@ -2,7 +2,7 @@
 
 import type { AnchorHTMLAttributes, FC } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "~/lib/cn";
 
 type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 

@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "~/lib/cn";
 
 type PageHeaderProps = {
   title: string;

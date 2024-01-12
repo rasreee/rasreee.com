@@ -1,7 +1,13 @@
 import { usePathname } from "next/navigation";
 import { useCallback } from "react";
 
-export const useIsActive = () => {
+interface IsActiveFunction {
+  (path: string): boolean;
+}
+
+type UseIsActiveResult = IsActiveFunction;
+
+export function useIsActive(): UseIsActiveResult {
   const pathname = usePathname();
 
   const isActive = useCallback(
@@ -12,4 +18,4 @@ export const useIsActive = () => {
   );
 
   return isActive;
-};
+}

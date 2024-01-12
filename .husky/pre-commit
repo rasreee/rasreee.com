@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm run type-check
-pnpm run fix-all-files
+pnpm run fix-all
+pnpm run build

@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from "react";
 
-import { cn } from "@/lib/cn";
+import { cn } from "~/lib/cn";
 
 export const EmailIcon: FC<SVGProps<SVGSVGElement>> = ({
   className,

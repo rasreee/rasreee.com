@@ -3,12 +3,12 @@
 import { DownloadIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 
-import { useAnalytics } from "@/components/analytics";
-import { Layout } from "@/components/layout";
-import { PageHeader, PageSection } from "@/components/page";
-import { SocialLinks } from "@/components/social/social-links";
-import { Button } from "@/components/ui/button";
-import { author } from "@/config/author";
+import { useAnalytics } from "~/components/analytics";
+import Layout from "~/components/layout";
+import { PageHeader, PageSection } from "~/components/page";
+import { SocialLinks } from "~/components/social/social-links";
+import { Button } from "~/components/ui/button";
+import { author } from "~/config/author";
 
 export default function Page() {
   const analytics = useAnalytics();
@@ -31,7 +31,7 @@ export default function Page() {
         </div>
         <Button asChild variant="outline" className="mt-8 md:mt-12">
           <Link
-            href="/resume.pdf"
+            href={author.resume}
             target="_blank"
             download={`${author.name.replace(" ", "_")}_resume`}
             onClick={() => {
