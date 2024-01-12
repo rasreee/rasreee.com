@@ -1,12 +1,12 @@
-import Layout from "components/layout";
+import { Page } from "components/page";
 
 import { Hero } from "./components/hero";
 
 export const HomePage: React.FC = () => {
   return (
-    <Layout>
+    <Page>
       <Hero />
       {/* <FeaturedProjects /> */}
-    </Layout>
+    </Page>
   );
 };

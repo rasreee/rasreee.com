@@ -1,5 +1,4 @@
-import Layout from "components/layout";
-import { PageHeader, PageSection } from "components/page";
+import { Page, PageHeader, PageSection } from "components/page";
 
 import { projects } from "modules/project/constants";
 
@@ -7,7 +6,7 @@ import { ProjectsList } from "./projects-list";
 
 export const ProjectsPage: React.FC = () => {
   return (
-    <Layout>
+    <Page>
       <PageSection>
         <PageHeader
           title="Projects"
@@ -17,6 +16,6 @@ export const ProjectsPage: React.FC = () => {
       <PageSection>
         <ProjectsList data={projects} />
       </PageSection>
-    </Layout>
+    </Page>
   );
 };

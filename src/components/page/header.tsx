@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 
-import { Navigation } from "components/layout/navigation";
 import { LogoLink } from "components/logo";
+import { Navigation } from "components/page/navigation";
 
 import { navigation } from "modules/navigation/constants";
 

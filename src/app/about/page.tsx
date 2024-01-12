@@ -4,19 +4,18 @@ import Link from "next/link";
 import { DownloadIcon } from "@radix-ui/react-icons";
 
 import { useAnalytics } from "components/analytics";
-import Layout from "components/layout";
-import { PageHeader, PageSection } from "components/page";
+import { Page, PageHeader, PageSection } from "components/page";
 import { Button } from "components/ui/button";
 
 import { author } from "config/author";
 
 import { SocialLinks } from "modules/social/components/social-links";
 
-export default function Page() {
+export default function AboutPage() {
   const analytics = useAnalytics();
 
   return (
-    <Layout>
+    <Page>
       <PageSection>
         <PageHeader
           title="About"
@@ -45,6 +44,6 @@ export default function Page() {
           </Link>
         </Button>
       </PageSection>
-    </Layout>
+    </Page>
   );
 }
