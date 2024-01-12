@@ -40,7 +40,6 @@
           "LabeledStatement",
           "WithStatement"
         ], // Overrides Airbnb configuration and enable no-restricted-syntax
-        "no-console": "off",
         "import/prefer-default-export": "off", // Named export is easier to refactor automatically
         "simple-import-sort/imports": [
           "error",
@@ -76,6 +75,7 @@
             ]
           }
         ], // Import configuration for `eslint-plugin-simple-import-sort`
+        "no-console": "off",
         "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
         "import/order": "off", // Avoid conflict rule between `eslint-plugin-import` and `eslint-plugin-simple-import-sort`
         "@typescript-eslint/no-unused-vars": "off",
@@ -111,7 +111,14 @@
     {
       "files": ["**/*.js"],
       "rules": {
-        "global-require": "off"
+        "global-require": "off",
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["*.config.ts"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
       }
     }
   ],
