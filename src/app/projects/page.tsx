@@ -1,15 +1,3 @@
-import Layout from "~/components/layout";
-import { PageHeader, PageSection } from "~/components/page";
+import { ProjectsPage } from "~/components/pages/projects-page";
 
-export default function Projects() {
-  return (
-    <Layout>
-      <PageSection>
-        <PageHeader
-          title="Projects"
-          description="Showcase of my personal projects and professional works so far."
-        />
-      </PageSection>
-    </Layout>
-  );
-}
+export default ProjectsPage;
