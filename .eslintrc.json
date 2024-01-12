@@ -40,6 +40,7 @@
           "LabeledStatement",
           "WithStatement"
         ], // Overrides Airbnb configuration and enable no-restricted-syntax
+        "no-console": "off",
         "import/prefer-default-export": "off", // Named export is easier to refactor automatically
         "simple-import-sort/imports": [
           "error",
