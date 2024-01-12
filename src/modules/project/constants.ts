@@ -1,7 +1,8 @@
-import type { GithubLanguage } from "domains/github/types";
-import type { Project } from "domains/project/types";
+import type { GithubLanguage } from "modules/github/types";
+import type { Project } from "modules/project/types";
 
-let id = 0;
+// eslint-disable-next-line @typescript-eslint/naming-convention
+let id = -1;
 
 const toProject = ({
   ...options
@@ -15,7 +16,8 @@ const toProject = ({
   featured?: boolean;
   language?: GithubLanguage;
 }): Project => {
-  return { id: id++, ...options };
+  id += 1;
+  return { id, ...options };
 };
 
 const NOW_DATE = new Date().toISOString();

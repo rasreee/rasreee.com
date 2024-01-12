@@ -1,8 +1,9 @@
+// eslint-disable-next-line no-console
 console.log(
   `\n\n====================== ${process.env.NODE_ENV.toUpperCase()} ======================\n\n`
 );
 
-// You might need to insert additional domains in script-src if you are using external services
+// You might need to insert additional modules in script-src if you are using external services
 const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' app.posthog.com;
@@ -38,7 +39,7 @@ const securityHeaders = [
   },
   {
     key: "Strict-Transport-Security",
-    value: "max-age=31536000; includeSubDomains",
+    value: "max-age=31536000; includeSubmodules",
   },
   {
     key: "Permissions-Policy",
@@ -61,7 +62,7 @@ const nextConfig = {
       },
     ];
   },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
   webpack: (config, _options) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>

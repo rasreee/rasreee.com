@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import type { NavigationLinkConfig } from "domains/navigation/types";
+import type { NavigationLinkConfig } from "modules/navigation/types";
 
 import { useIsActive } from "hooks/use-is-active";
 

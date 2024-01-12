@@ -10,7 +10,7 @@ import { Button } from "components/ui/button";
 
 import { author } from "config/author";
 
-import { SocialLinks } from "domains/social/ui/social-links";
+import { SocialLinks } from "modules/social/components/social-links";
 
 export default function Page() {
   const analytics = useAnalytics();

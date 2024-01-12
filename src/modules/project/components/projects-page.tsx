@@ -1,9 +1,9 @@
 import Layout from "components/layout";
 import { PageHeader, PageSection } from "components/page";
 
-import { projects } from "domains/project/constants";
+import { projects } from "modules/project/constants";
 
-import { ProjectCard } from "./project-card";
+import { ProjectsList } from "./projects-list";
 
 export const ProjectsPage: React.FC = () => {
   return (
@@ -15,9 +15,7 @@ export const ProjectsPage: React.FC = () => {
         />
       </PageSection>
       <PageSection>
-        {projects.map((project) => (
-          <ProjectCard key={`project-${project.id}`} {...project} />
-        ))}
+        <ProjectsList data={projects} />
       </PageSection>
     </Layout>
   );

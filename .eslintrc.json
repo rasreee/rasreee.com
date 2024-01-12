@@ -1,193 +1,93 @@
 {
-  "ignorePatterns": [
-    "**/.next",
-    "**/.yarn",
-    "**/dist",
-    "**/node_modules",
-    "**/public"
-  ],
-  "env": {
-    "es6": true,
-    "node": true,
-    "browser": true
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true,
-      "globalReturn": false
-    },
-    "ecmaVersion": "latest",
-    "project": ["tsconfig.json"],
-    "sourceType": "module"
-  },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx", ".mts"]
-    },
-    "import/resolver": {
-      "typescript": {}
-    }
-  },
+  // Configuration for JavaScript files
   "extends": [
     "airbnb-base",
-    "airbnb",
-    "airbnb-typescript",
-    "plugin:@next/next/core-web-vitals",
-    "prettier"
+    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
+    "plugin:prettier/recommended"
   ],
-  "plugins": [
-    "@typescript-eslint",
-    "import",
-    "simple-import-sort",
-    "unused-imports",
-    "prettier"
-  ],
-  "rules": {
-    "prettier/prettier": "error",
-    "arrow-body-style": "off",
-    "prefer-arrow-callback": "off",
-    "prefer-destructuring": "off",
-    "lines-around-comment": [
-      "error",
-      {
-        "beforeLineComment": false,
-        "beforeBlockComment": false,
-        "allowBlockStart": true,
-        "allowClassStart": true,
-        "allowObjectStart": true,
-        "allowArrayStart": true
-      }
-    ],
-    "spaced-comment": [
-      "error",
-      "always",
-      {
-        "line": {
-          "markers": ["/"],
-          "exceptions": ["-", "+"]
-        },
-        "block": {
-          "markers": ["!"],
-          "exceptions": ["*"],
-          "balanced": true
-        }
-      }
-    ],
-    "linebreak-style": ["error", "unix"],
-    "lines-between-class-members": ["error", "always"],
-    "newline-before-return": "off",
-    "class-methods-use-this": "off",
-    "max-classes-per-file": "warn",
-    "no-case-declarations": "off",
-    "no-extra-boolean-cast": "off",
-    "no-use-before-define": "off",
-    "no-console": "off",
-    "no-restricted-syntax": [
-      "error",
-      "ForInStatement",
-      "LabeledStatement",
-      "WithStatement"
-    ],
-    "no-underscore-dangle": "warn",
-    "no-continue": "warn",
-    "no-plusplus": "off",
-    "no-restricted-imports": [
-      "error",
-      {
-        "paths": ["tsup"]
-      }
-    ],
-    "radix": "off",
-
-    "import/extensions": "off",
-    "import/prefer-default-export": "off",
-    "import/no-extraneous-dependencies": "off",
-    "import/first": "error",
-    "import/newline-after-import": [
-      "error",
-      {
-        "count": 1
-      }
-    ],
-    "import/no-duplicates": ["error", { "considerQueryString": true }],
-    "import/no-relative-packages": "off",
-
-    "simple-import-sort/imports": [
-      "error",
-      {
-        "groups": [
-          // Node.js builtins.
-          [
-            "^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)"
-          ],
-          // Packages. `react` related packages come first.
-          // Also, put `react-icons` in sorting order not with `react`
-          ["^react(?!-.)$", "^\\w", "^@\\w"],
-          // From the `components` directory.
-          ["^components"],
-          // From the `config` directory.
-          ["^config"],
-          // From the `domains` directory.
-          ["^domains"],
-          // From the `hooks` directory.
-          ["^hooks"],
-          // From the `lib` directory.
-          ["^lib"],
-          // From the `styles` directory.
-          ["^styles"],
-          // Parent imports. Put `..` last.
-          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
-          // Other relative imports. Put same-folder imports and `.` last.
-          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
-          // Style imports.
-          ["^.+\\.s?css$"],
-          // Side effect imports.
-          ["^\\u0000"]
+  "overrides": [
+    // Configuration for TypeScript files
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": [
+        "@typescript-eslint",
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort"
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "prettier/prettier": "error", // Avoid conflict rule between Prettier and Airbnb Eslint
+        "import/extensions": "off", // Avoid missing file extension errors, TypeScript already provides a similar feature
+        "react/function-component-definition": "off", // Disable Airbnb's specific function type
+        "react/destructuring-assignment": "off", // Vscode doesn't support automatically destructuring, it's a pain to add a new variable
+        "react/require-default-props": "off", // Allow non-defined react props as undefined
+        "react/jsx-props-no-spreading": "off", // _app.tsx uses spread operator and also, react-hook-form
+        "@typescript-eslint/comma-dangle": "off", // Avoid conflict rule between Eslint and Prettier
+        "@typescript-eslint/consistent-type-imports": "error", // Ensure `import type` is used when it's necessary
+        "no-restricted-syntax": [
+          "error",
+          "ForInStatement",
+          "LabeledStatement",
+          "WithStatement"
+        ], // Overrides Airbnb configuration and enable no-restricted-syntax
+        "import/prefer-default-export": "off", // Named export is easier to refactor automatically
+        "simple-import-sort/imports": [
+          "error",
+          {
+            "groups": [
+              // Node.js builtins.
+              [
+                "^(assert|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|https|module|net|os|path|punycode|querystring|readline|repl|stream|string_decoder|sys|timers|tls|tty|url|util|vm|zlib|freelist|v8|process|async_hooks|http2|perf_hooks)(/.*|$)"
+              ],
+              // Packages. `react` related packages come first.
+              // Also, put `react-icons` in sorting order not with `react`
+              ["^react(?!-.)$", "^\\w", "^@\\w"],
+              // From the `components` directory.
+              ["^components"],
+              // From the `config` directory.
+              ["^config"],
+              // From the `modules` directory.
+              ["^modules"],
+              // From the `hooks` directory.
+              ["^hooks"],
+              // From the `lib` directory.
+              ["^lib"],
+              // From the `styles` directory.
+              ["^styles"],
+              // Parent imports. Put `..` last.
+              ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+              // Other relative imports. Put same-folder imports and `.` last.
+              ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+              // Style imports.
+              ["^.+\\.s?css$"],
+              // Side effect imports.
+              ["^\\u0000"]
+            ]
+          }
+        ], // Import configuration for `eslint-plugin-simple-import-sort`
+        "simple-import-sort/exports": "error", // Export configuration for `eslint-plugin-simple-import-sort`
+        "import/order": "off", // Avoid conflict rule between `eslint-plugin-import` and `eslint-plugin-simple-import-sort`
+        "@typescript-eslint/no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+          "error",
+          {
+            "argsIgnorePattern": "^_"
+          }
         ]
       }
-    ],
-    "simple-import-sort/exports": "error",
-
-    "no-unused-vars": "off",
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ],
-
-    "@typescript-eslint/no-shadow": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/ban-types": [
-      "error",
-      {
-        "extendDefaults": true,
-        "types": {
-          "{}": false
-        }
-      }
-    ],
-    "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/no-use-before-define": "off",
-    "@typescript-eslint/no-redeclare": "off",
-    "@typescript-eslint/consistent-type-assertions": "off",
-    "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/consistent-type-imports": "error",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-member-accessibility": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-parameter-properties": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-
-    "@next/next/no-html-link-for-pages": "off"
-  },
-  "overrides": [
+    },
+    // Configuration for TypeScript declaration files
     {
       "files": ["*.d.ts"],
       "rules": {
@@ -195,121 +95,25 @@
         "@typescript-eslint/no-explicit-any": "off"
       }
     },
-    {
-      "files": ["*.mjs"],
-      "extends": ["plugin:@typescript-eslint/disable-type-checked"],
-      "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-      },
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/consistent-type-exports": "off",
-        "@typescript-eslint/consistent-type-imports": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-return": "off"
-      }
-    },
-    {
-      "files": ["*.js", "*.cjs"],
-      "extends": ["plugin:@typescript-eslint/disable-type-checked"],
-      "parser": "espree",
-      "parserOptions": {
-        "ecmaVersion": "latest"
-      },
-      "rules": {
-        "global-require": "off",
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off",
-        "@typescript-eslint/consistent-type-exports": "off",
-        "@typescript-eslint/consistent-type-imports": "off"
-      }
-    },
-    {
-      "files": [
-        "*.{js,jsx,ts,tsx}",
-        "*.styles.{js,jsx,ts,tsx}",
-        "styles.{js,jsx,ts,tsx}"
-      ],
-      "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-      },
-      "settings": {
-        "react": {
-          "version": "detect"
-        }
-      },
-      "extends": [
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:jsx-a11y/recommended"
-      ],
-      "rules": {
-        "react/no-unknown-property": ["error", { "ignore": ["css"] }],
-        "react/no-unescaped-entities": ["error", { "forbid": [">"] }],
-        "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off",
-        "react/button-has-type": "off",
-        "react/destructuring-assignment": "off",
-        "react/function-component-definition": "off",
-        "react/jsx-props-no-spreading": "off",
-        "react/require-default-props": "off"
-      }
-    },
+    // Configuration for testing
     {
       "files": ["**/?(*.)+(test).{js,jsx,ts,tsx}"],
-      "env": {
-        "es6": true,
-        "node": true
-      },
-      "settings": {
-        // To prevent autodetection issues in monorepos or via vitest
-        "jest": {
-          "version": "latest"
-        }
-      },
       "plugins": ["jest", "jest-formatting", "testing-library", "jest-dom"],
       "extends": [
         "plugin:jest/recommended",
         "plugin:jest-formatting/recommended",
         "plugin:testing-library/react",
         "plugin:jest-dom/recommended"
-      ],
+      ]
+    },
+    {
+      "files": ["**/*.js"],
       "rules": {
-        // Relax rules that are known to be slow and less useful in a test context
-        "import/namespace": "off",
-        "import/default": "off",
-        "import/no-duplicates": "off",
-        // Relax rules that makes writing tests easier
-        "import/no-named-as-default-member": "off",
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-object-literal-type-assertion": "off",
-        "@typescript-eslint/no-empty-function": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/no-unsafe-member-access": "off",
-        "@typescript-eslint/no-unsafe-assignment": "off",
-        // Enable Jest rules
-        "jest/no-focused-tests": "error",
-        "jest/prefer-mock-promise-shorthand": "error",
-        "jest/no-commented-out-tests": "error",
-        "jest/prefer-hooks-in-order": "error",
-        "jest/prefer-hooks-on-top": "error",
-        "jest/no-conditional-in-test": "error",
-        "jest/no-duplicate-hooks": "error",
-        "jest/no-test-return-statement": "error",
-        "jest/prefer-strict-equal": "error",
-        "jest/prefer-to-have-length": "error",
-        "jest/consistent-test-it": ["error", { "fn": "it" }],
-        // https://github.com/jest-community/eslint-plugin-jest/blob/main/docs/rules/unbound-method.md
-        "@typescript-eslint/unbound-method": "off",
-        "jest/unbound-method": "error"
+        "global-require": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "prettier/prettier": "error"
+  }
 }

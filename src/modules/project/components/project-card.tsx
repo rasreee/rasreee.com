@@ -1,4 +1,4 @@
-import type { Project } from "domains/project/types";
+import type { Project } from "modules/project/types";
 
 export type ProjectCardProps = Project;
 

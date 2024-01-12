@@ -6,9 +6,9 @@ import { ExternalLink } from "components/external-link";
 
 import { author } from "config/author";
 
-import GitHubIcon from "domains/social/ui/icons/github-icon";
-import LinkedInIcon from "domains/social/ui/icons/linkedin-icon";
-import TwitchIcon from "domains/social/ui/icons/twitch-icon";
+import GitHubIcon from "modules/social/components/icons/github-icon";
+import LinkedInIcon from "modules/social/components/icons/linkedin-icon";
+import TwitchIcon from "modules/social/components/icons/twitch-icon";
 
 const socialLinks = [
   {

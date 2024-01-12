@@ -9,9 +9,9 @@ import logoUrl from "./logo.svg?url";
 const logoVariants = cva(["object-contain"], {
   variants: {
     size: {
-      xs: "w-12 h-12 md:w-14 md:h-14",
-      sm: "w-14 h-14 md:w-16 md:h-16",
-      md: "w-16 h-16 md:w-[4.5rem] md:h-[4.5rem]",
+      xs: "h-12 w-12 md:h-14 md:w-14",
+      sm: "h-14 w-14 md:h-16 md:w-16",
+      md: "h-16 w-16 md:h-[4.5rem] md:w-[4.5rem]",
     },
   },
 });

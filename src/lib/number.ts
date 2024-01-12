@@ -7,12 +7,12 @@ export function isNumeric(value: any): value is number {
 }
 
 export function isInteger(value: unknown): value is number {
-  return isNumeric(value) && Number.isInteger(parseInt(value.toString()));
+  return isNumeric(value) && Number.isInteger(parseInt(value.toString(), 10));
 }
 
 export function toInteger(value: any, fallback = 0): number {
   if (typeof value === "string") {
-    return parseInt(value);
+    return parseInt(value, 10);
   }
 
   return !isInteger(value) || Number.isNaN(value) ? fallback : value;

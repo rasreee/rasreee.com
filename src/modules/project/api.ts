@@ -1,5 +1,5 @@
-import { projects } from "domains/project/constants";
-import type { Project } from "domains/project/types";
+import { projects } from "modules/project/constants";
+import type { Project } from "modules/project/types";
 
 import type { Pagination } from "lib/pagination";
 

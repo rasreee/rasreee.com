@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { Navigation } from "components/layout/navigation";
 import { LogoLink } from "components/logo";
 
-import { navigation } from "domains/navigation/constants";
+import { navigation } from "modules/navigation/constants";
 
 import { useIsTop } from "hooks/use-is-top";
 

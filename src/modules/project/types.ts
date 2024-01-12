@@ -1,4 +1,4 @@
-import type { GithubLanguage } from "domains/github/types";
+import type { GithubLanguage } from "modules/github/types";
 
 export type Project = {
   id: number;

@@ -1,6 +1,6 @@
 import { PageHeader, PageSection } from "components/page";
 
-import { SocialLinks } from "domains/social/ui/social-links";
+import { SocialLinks } from "modules/social/components/social-links";
 
 export const Hero: React.FC = () => {
   return (

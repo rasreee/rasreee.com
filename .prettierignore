@@ -1,9 +1,6 @@
-.cache/
-.DS_Store
 .env*
 .next/
-.vercel
+.vercel/
 *.log*
-*.pem
 node_modules/
 public/
