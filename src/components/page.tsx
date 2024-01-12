@@ -1,5 +1,3 @@
-import type { PropsWithChildren } from "react";
-
 import { cn } from "lib/cn";
 
 type PageHeaderProps = {
@@ -23,7 +21,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
   );
 };
 
-type PageSectionProps = PropsWithChildren<{ className?: string }>;
+type PageSectionProps = React.PropsWithChildren<{ className?: string }>;
 
 export const PageSection: React.FC<PageSectionProps> = ({
   children,
