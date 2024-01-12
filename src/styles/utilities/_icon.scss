@@ -8,3 +8,14 @@
     width: 1.5rem;
   }
 }
+
+.icon-lg {
+  color: var(--foreground);
+  height: 1.5rem;
+  width: 1.5rem;
+
+  @media (min-width: 640px) {
+    height: 1.75rem;
+    width: 1.75rem;
+  }
+}

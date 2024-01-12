@@ -1,4 +1,7 @@
+import Link from "next/link";
+
 import { PageHeader, PageSection } from "components/page";
+import { Button } from "components/ui/button";
 
 import { SocialLinks } from "modules/social/components/social-links";
 
@@ -10,7 +13,10 @@ export const Hero: React.FC = () => {
         title="Lesley Chang"
         description="Software Engineer. Helping teams build core software from the ground up."
       />
-      <div className="mt-8 md:mt-10">
+      <div className="mt-3 space-y-6 md:mt-6">
+        <Button asChild variant="outline" className="">
+          <Link href="/about">Learn more about me</Link>
+        </Button>
         <SocialLinks />
       </div>
     </PageSection>
