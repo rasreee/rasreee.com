@@ -84,7 +84,8 @@
           {
             "argsIgnorePattern": "^_"
           }
-        ]
+        ],
+        "tailwindcss/no-custom-classname": "off"
       }
     },
     // Configuration for TypeScript declaration files
