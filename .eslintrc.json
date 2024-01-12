@@ -98,6 +98,7 @@
         "paths": ["tsup"]
       }
     ],
+    "radix": "off",
 
     "import/extensions": "off",
     "import/prefer-default-export": "off",

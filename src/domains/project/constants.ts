@@ -1,6 +1,5 @@
 import type { GithubLanguage } from "domains/github/types";
-
-import type { ProjectConfig } from "./types";
+import type { Project } from "domains/project/types";
 
 let id = 0;
 
@@ -15,14 +14,14 @@ const toProject = ({
   demoUrl?: string;
   featured?: boolean;
   language?: GithubLanguage;
-}): ProjectConfig => {
+}): Project => {
   return { id: id++, ...options };
 };
 
 const NOW_DATE = new Date().toISOString();
 const baseProject = { stars: 0, updatedAt: NOW_DATE };
 
-export const projects: ProjectConfig[] = [
+export const projects: Project[] = [
   {
     title: "iJan Payroll",
     description:

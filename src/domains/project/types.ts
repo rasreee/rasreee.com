@@ -1,6 +1,6 @@
 import type { GithubLanguage } from "domains/github/types";
 
-export type ProjectConfig = {
+export type Project = {
   id: number;
   title: string;
   description: string;
