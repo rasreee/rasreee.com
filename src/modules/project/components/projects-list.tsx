@@ -7,7 +7,7 @@ export type ProjectsListProps = {
 
 export const ProjectsList: React.FC<ProjectsListProps> = ({ data }) => {
   return (
-    <ul>
+    <ul className="space-y-2.5 md:space-y-4">
       {data.map((project) => (
         <li key={`project-${project.id}`}>
           <ProjectCard {...project} />

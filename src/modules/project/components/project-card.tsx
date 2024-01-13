@@ -31,35 +31,35 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Link>
           </div>
           <div className="flex items-center gap-3">
-            {gitUrl && (
+            {gitUrl ? (
               <Link
                 className="hover:text-github-accent-fg aboveMobile:text-sm text-left align-middle font-mono text-xs font-medium leading-none text-hint underline underline-offset-2"
                 href={gitUrl}
               >
                 code
               </Link>
-            )}
-            {demoUrl && (
+            ) : null}
+            {demoUrl ? (
               <Link
                 className="hover:text-github-accent-fg aboveMobile:text-sm text-left align-middle font-mono text-xs font-medium leading-none text-hint underline underline-offset-2"
                 href={demoUrl}
               >
                 demo
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
-        {description && (
+        {description ? (
           <div className="aboveMobile:text-sm aboveMobile:line-clamp-3 line-clamp-2 text-left align-middle text-xs leading-normal text-hint">
             {description}
           </div>
-        )}
+        ) : null}
       </div>
       <div className="flex items-center gap-3 text-hint">
-        {language && (
+        {language ? (
           <LanguageMeta color={language.color} name={language.name} />
-        )}
-        {stars && <StarsMeta stars={stars} />}
+        ) : null}
+        {stars ? <StarsMeta stars={stars} /> : null}
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import { Page, PageHeader, PageSection } from "components/page";
 
+import { ProjectsList } from "modules/project/components/projects-list";
 import { projects } from "modules/project/constants";
 
-import { ProjectsList } from "./projects-list";
-
 export const ProjectsPage: React.FC = () => {
+  // const { data } = useSWR("/projects", () => getProjects());
+
   return (
     <Page>
       <PageSection>
