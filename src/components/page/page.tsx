@@ -37,7 +37,7 @@ export const PageHeader: React.FC<PageHeaderProps> = ({
     <div className="space-y-2 py-2">
       <h1 className="text-3xl font-bold md:text-4xl 2xl:text-5xl">{title}</h1>
       {description && (
-        <p className="max-w-[30ch] pt-1 text-lg text-hint md:max-w-[40ch] md:pt-3 md:text-xl">
+        <p className="max-w-[30ch] pt-1 text-base text-hint md:max-w-[40ch] md:pt-3 md:text-lg">
           {description}
         </p>
       )}
