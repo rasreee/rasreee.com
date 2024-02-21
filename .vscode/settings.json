@@ -24,9 +24,6 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/.history": true,
-    "**/.lh": true,
-    "[!s]*/**": true,
-    "s[!r]*/**": true,
-    "sr[!c]*/**": true
+    "**/.lh": true
   }
 }
